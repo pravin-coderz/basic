@@ -1,0 +1,20 @@
+<html>
+   <head>
+      <script type="text/javascript">
+         function checkSpcialChar(event){
+            if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57))){
+               event.returnValue = false;
+               return;
+            }
+            event.returnValue = true;
+         }
+      </script>
+   </head>
+   <body>
+      <form id="form1">
+        <div>
+            <input type="text" name="txtInput" id="txtInput" value="" onkeypress="return checkSpcialChar(event)">
+        </div>
+     </form>
+   </body>
+</html>
