@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>	
+
+ <div id="login">
+  <form method = "post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+   <input class="login" type="radio" name="users_login" value="login" checked> Already have a account please login<br>
+    <input class="guest" type="radio" name="users_login" value="Guest"> GUEST ,Without signup<br>
+     <input class="register" type="radio" name="users_login" value="Register"> New user register<br><br>
+	  <div id="login">
+	  	<h1>Login </h1>
+	  	 User name:<br>
+	     <input type="text" name="uname">
+	     <br>
+	     Password:<br>
+	     <input type="password" name="password"><br>
+	      <input type="submit" name="login" value="Submit">
+   </form>
+  </div>
+ <div id="guest">
+ 	<form method = "post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <input class="login" type="radio" name="users_guest" value="login" checked> Already have a account please login<br>
+    <input class="guest" type="radio" name="users_guest" value="Guest"> GUEST ,Without signup<br>
+    <input class="register" type="radio" name="users_guest" value="Register"> New user register<br><br>
+   	  	<h1>Guest user</h1>
+	  	 User name:<br>
+	     <input type="text" name="username">
+	     <br>
+	     Phone:<br>
+	     <input type="text" name="phone"><br>
+	     Email:<br>
+	     <input type="text" name="email"><br>
+	     Address:<br>
+	     <textarea name = "address" rows = "5" cols = "40"></textarea> <br>
+	     <input type="submit" name="guest" value="Submit">
+    </form>
+ </div>
+ <div id="register">
+   	<form method = "post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+   	<input class="login" type="radio" name="users_register" value="login" checked> Already have a account please login<br>
+    <input class="guest" type="radio" name="users_register" value="Guest"> GUEST ,Without signup<br>
+    <input class="register" type="radio" name="users_register" value="Register"> New user register<br><br>
+   	  	<h1>Register </h1>
+	  	 First name:<br>
+	     <input type="text" name="firstname">
+	     <br>
+	     last name:<br>
+	     <input type="text" name="lastname">
+	     <br>
+	     Email id:<br>
+	     <input type="text" name="email">
+	     <br>
+	     Choose Password:<br>
+	     <input type="password" name="cpassword"><br>
+	     Password:<br>
+	     <input type="password" name="password"><br>
+	     <input type="submit" name="register" value="Submit">
+   	 </form>
+ </div>
+
+    <script type="text/javascript">
+       $(document).ready(function(){
+	      $("#guest").hide();
+          $("#register").hide();
+          $("#login").show();
+    	$(".login").click(function(){
+          $("#guest").hide();
+          $("#register").hide();
+          $("#login").show();
+        });
+        $(".guest").click(function(){
+          $("#guest").show();
+	      $("#register").hide();
+	      $("#login").hide();
+	    });
+        $(".register").click(function(){
+	      $("#guest").hide();
+	      $("#register").show();
+	      $("#login").hide();
+    	});
+	  });
+    </script>
+
+</body>
+</html>
